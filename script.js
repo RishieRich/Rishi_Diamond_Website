@@ -4,11 +4,12 @@
 
 /* ─── TYPING EFFECT ──────────────────────────────────────────────── */
 const roles = [
-  'Senior Data Engineer',
-  'Cloud Solution Architect',
-  'Big Data Specialist',
-  'AWS Certified Architect',
-  'Healthcare Data Expert',
+  'AI Engineering Architect',
+  'Senior GenAI Engineer',
+  'RAG & Agentic Systems Builder',
+  'LangGraph / LangChain Expert',
+  'Enterprise AI Platform Lead',
+  'LLM Evaluation Specialist',
 ];
 
 let roleIndex = 0;
