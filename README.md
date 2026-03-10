@@ -4,7 +4,7 @@ Production-ready static portfolio website for Rishikesh Pote.
 
 ## Last Updated
 
-March 6, 2026
+March 10, 2026
 
 ## Project Type
 
@@ -17,8 +17,14 @@ No Node.js build, package manager, or backend service is required.
 - CSS3 (`style.css`)
 - Vanilla JavaScript (`script.js`)
 - External CDN assets:
-  - Google Fonts (`Inter`, `JetBrains Mono`)
+  - Google Fonts (`Space Grotesk`, `IBM Plex Mono`)
   - Font Awesome 6.5.0
+
+## AI Positioning Highlights
+
+- Enterprise AI architecture narrative with stronger focus on multi-agent orchestration, RAG pipelines, evaluation frameworks, and governance.
+- Updated portfolio copy with clearer, grammar-checked language and more explicit production AI expertise.
+- Enhanced technical positioning across hero, about, experience, and case-study sections.
 
 ## Repository Structure
 
@@ -63,8 +69,10 @@ npx serve .
 - Hero typing effect
 - Sticky/active navbar behavior on scroll
 - Mobile hamburger menu toggle
-- Fade-in animation via `IntersectionObserver`
-- Subtle floating badge parallax effect
+- Scroll progress indicator
+- Staggered reveal animation via `IntersectionObserver`
+- Smoothed floating badge parallax effect
+- Reduced-motion accessibility handling
 
 ## Permissions Configured in This Repo
 

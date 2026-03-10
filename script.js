@@ -1,45 +1,56 @@
-/* ═══════════════════════════════════════════════════════════════════
-   Rishikesh Pote — Portfolio  |  script.js
-   ═══════════════════════════════════════════════════════════════════ */
+/* Rishikesh Pote Portfolio | script.js */
 
-/* ─── TYPING EFFECT ──────────────────────────────────────────────── */
+const root = document.documentElement;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Typing effect */
 const roles = [
   'AI Engineering Architect',
   'Senior GenAI Engineer',
-  'RAG & Agentic Systems Builder',
-  'LangGraph / LangChain Expert',
-  'Enterprise AI Platform Lead',
-  'LLM Evaluation Specialist',
+  'Agentic AI Systems Lead',
+  'RAG and Evaluation Framework Specialist',
+  'Enterprise AI Platform Builder',
+  'LLM Governance and Quality Engineering',
 ];
 
+const typedEl = document.getElementById('typed-text');
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typedEl = document.getElementById('typed-text');
 
 function typeEffect() {
-  const current = roles[roleIndex];
+  if (!typedEl) return;
 
+  const current = roles[roleIndex];
   if (isDeleting) {
     typedEl.textContent = current.slice(0, --charIndex);
     if (charIndex === 0) {
       isDeleting = false;
       roleIndex = (roleIndex + 1) % roles.length;
     }
-    setTimeout(typeEffect, 60);
+    setTimeout(typeEffect, 55);
+    return;
+  }
+
+  typedEl.textContent = current.slice(0, ++charIndex);
+  if (charIndex === current.length) {
+    isDeleting = true;
+    setTimeout(typeEffect, 1700);
+    return;
+  }
+
+  setTimeout(typeEffect, 82);
+}
+
+if (typedEl) {
+  if (prefersReducedMotion) {
+    typedEl.textContent = roles[0];
   } else {
-    typedEl.textContent = current.slice(0, ++charIndex);
-    if (charIndex === current.length) {
-      isDeleting = true;
-      setTimeout(typeEffect, 1800);
-    } else {
-      setTimeout(typeEffect, 90);
-    }
+    typeEffect();
   }
 }
-typeEffect();
 
-/* ─── NAVBAR — scroll state & active link ────────────────────────── */
+/* Navbar + scroll progress */
 const navbar = document.getElementById('navbar');
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -47,76 +58,137 @@ const navLinks = document.querySelectorAll('.nav-link');
 function updateNavbar() {
   const scrollY = window.scrollY;
 
-  // scrolled class for background
-  navbar.classList.toggle('scrolled', scrollY > 40);
+  if (navbar) {
+    navbar.classList.toggle('scrolled', scrollY > 40);
+  }
 
-  // active link highlight
   let current = '';
-  sections.forEach(sec => {
-    if (scrollY >= sec.offsetTop - 120) current = sec.id;
+  sections.forEach((section) => {
+    if (scrollY >= section.offsetTop - 120) current = section.id;
   });
-  navLinks.forEach(link => {
+
+  navLinks.forEach((link) => {
     link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
   });
 }
-window.addEventListener('scroll', updateNavbar, { passive: true });
-updateNavbar();
 
-/* ─── HAMBURGER MENU ─────────────────────────────────────────────── */
+function updateScrollProgress() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  root.style.setProperty('--scroll-progress', progress.toFixed(4));
+}
+
+let scrollTicking = false;
+function handleScroll() {
+  if (scrollTicking) return;
+  scrollTicking = true;
+
+  window.requestAnimationFrame(() => {
+    updateNavbar();
+    updateScrollProgress();
+    scrollTicking = false;
+  });
+}
+
+window.addEventListener('scroll', handleScroll, { passive: true });
+window.addEventListener('resize', handleScroll, { passive: true });
+handleScroll();
+
+/* Mobile nav */
 const hamburger = document.getElementById('hamburger');
 const navLinksEl = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinksEl.classList.toggle('open');
-});
-
-navLinksEl.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinksEl.classList.remove('open');
+if (hamburger && navLinksEl) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinksEl.classList.toggle('open');
   });
+
+  navLinksEl.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinksEl.classList.remove('open');
+    });
+  });
+}
+
+/* Reveal-on-scroll with staggered delays */
+const fadeEls = [...document.querySelectorAll('.fade-in')];
+fadeEls.forEach((el, index) => {
+  const delay = (index % 8) * 70;
+  el.style.setProperty('--reveal-delay', `${delay}ms`);
 });
 
-/* ─── SCROLL FADE-IN (IntersectionObserver) ──────────────────────── */
-const fadeEls = document.querySelectorAll('.fade-in');
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+if (prefersReducedMotion) {
+  fadeEls.forEach((el) => el.classList.add('visible'));
+} else if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-);
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
 
-fadeEls.forEach(el => observer.observe(el));
+  fadeEls.forEach((el) => observer.observe(el));
+} else {
+  fadeEls.forEach((el) => el.classList.add('visible'));
+}
 
-/* ─── SMOOTH ACTIVE NAV HIGHLIGHT ON CLICK ───────────────────────── */
-navLinks.forEach(link => {
+/* Immediate active-link feedback on click */
+navLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    navLinks.forEach(l => l.classList.remove('active'));
+    navLinks.forEach((item) => item.classList.remove('active'));
     link.classList.add('active');
   });
 });
 
-/* ─── FLOATING BADGE PARALLAX (subtle) ──────────────────────────── */
-const floatBadges = document.querySelectorAll('.float-badge');
-window.addEventListener('mousemove', e => {
-  if (window.innerWidth < 768) return;
-  const cx = window.innerWidth  / 2;
-  const cy = window.innerHeight / 2;
-  const dx = (e.clientX - cx) / cx;
-  const dy = (e.clientY - cy) / cy;
-  floatBadges.forEach((b, i) => {
-    const factor = (i + 1) * 6;
-    b.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
-  });
-});
+/* Smoothed floating-badge parallax */
+const floatBadges = [...document.querySelectorAll('.float-badge')];
+if (!prefersReducedMotion && floatBadges.length > 0) {
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  const spring = 0.09;
 
-/* ─── YEAR IN FOOTER ─────────────────────────────────────────────── */
-const yearEls = document.querySelectorAll('.footer-year');
-yearEls.forEach(el => { el.textContent = new Date().getFullYear(); });
+  const updateTarget = (event) => {
+    if (window.innerWidth < 768) {
+      targetX = 0;
+      targetY = 0;
+      return;
+    }
+
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    targetX = (event.clientX - cx) / cx;
+    targetY = (event.clientY - cy) / cy;
+  };
+
+  const resetTarget = () => {
+    targetX = 0;
+    targetY = 0;
+  };
+
+  const animateBadges = () => {
+    currentX += (targetX - currentX) * spring;
+    currentY += (targetY - currentY) * spring;
+
+    floatBadges.forEach((badge, index) => {
+      const factor = (index + 1) * 5;
+      badge.style.setProperty('--tx', `${(currentX * factor).toFixed(2)}px`);
+      badge.style.setProperty('--ty', `${(currentY * factor).toFixed(2)}px`);
+    });
+
+    window.requestAnimationFrame(animateBadges);
+  };
+
+  window.addEventListener('mousemove', updateTarget, { passive: true });
+  window.addEventListener('mouseleave', resetTarget, { passive: true });
+  window.addEventListener('blur', resetTarget);
+
+  animateBadges();
+}
