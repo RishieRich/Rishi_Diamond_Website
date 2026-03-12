@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rishikesh Pote | AI Engineering Architect & Senior GenAI Engineer</title>
+  <title>Rishikesh Pote | AI Engineering Architect &amp; Senior GenAI Engineer</title>
   <meta name="description" content="AI Engineering Architect and Senior GenAI Engineer with 7.5+ years of experience delivering enterprise agentic AI systems, RAG platforms, LLM evaluation frameworks, and governed automation for regulated analytics workflows." />
   <meta name="keywords" content="Agentic AI, LangGraph, LangChain, LangSmith, RAG, Vector Search, FAISS, Chroma, LLM-as-Judge, EvalOps, Spec-to-Code Automation, QC Automation, Clinical Programming, SDTM, ADaM, RWD, Databricks, AWS, GenAI Engineer, AI Architect" />
   <link rel="stylesheet" href="style.css" />
@@ -14,7 +14,15 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">RP<span class="accent-dot">.</span></a>
@@ -35,9 +43,10 @@
     </div>
   </nav>
 
-    <!-- HERO -->
+  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg-grid"></div>
+    <div class="hero-particles" id="hero-particles"></div>
     <div class="hero-inner">
 
       <div class="hero-left fade-in">
@@ -65,22 +74,22 @@
         </div>
         <div class="hero-stats">
           <div class="stat-card">
-            <span class="stat-num">7.5<span class="accent-text">+</span></span>
+            <span class="stat-num" data-count="7" data-suffix=".5+">7.5+</span>
             <span class="stat-label">Years Exp.</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-card">
-            <span class="stat-num">3</span>
+            <span class="stat-num" data-count="3" data-suffix="">3</span>
             <span class="stat-label">Case Studies</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-card">
-            <span class="stat-num">75<span class="accent-text">%</span></span>
+            <span class="stat-num" data-count="75" data-suffix="%">75%</span>
             <span class="stat-label">Efficiency Gains</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-card">
-            <span class="stat-num">8<span class="accent-text">+</span></span>
+            <span class="stat-num" data-count="8" data-suffix="+">8+</span>
             <span class="stat-label">Certifications</span>
           </div>
         </div>
@@ -136,7 +145,7 @@
     </a>
   </section>
 
-    <!-- ABOUT -->
+  <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
       <div class="section-header fade-in">
@@ -233,7 +242,7 @@
     </div>
   </section>
 
-    <!-- EXPERIENCE -->
+  <!-- EXPERIENCE -->
   <section id="experience" class="section section-alt">
     <div class="container">
       <div class="section-header fade-in">
@@ -330,7 +339,7 @@
     </div>
   </section>
 
-    <!-- SKILLS -->
+  <!-- SKILLS -->
   <section id="skills" class="section">
     <div class="container">
       <div class="section-header fade-in">
@@ -339,7 +348,7 @@
       </div>
     </div>
 
-    <!-- Marquee row 1 &mdash; AI / GenAI -->
+    <!-- Marquee row 1 — AI / GenAI -->
     <div class="marquee-wrapper fade-in">
       <div class="marquee marquee-left">
         <div class="marquee-track">
@@ -370,7 +379,7 @@
           <span class="skill-chip"><i class="fas fa-cogs"></i> Tool Use</span>
         </div>
       </div>
-      <!-- Marquee row 2 &mdash; Data Platform -->
+      <!-- Marquee row 2 — Data Platform -->
       <div class="marquee marquee-right">
         <div class="marquee-track">
           <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
@@ -402,62 +411,99 @@
       </div>
     </div>
 
-    <!-- Skill category cards -->
+    <!-- Skill category cards with expand -->
     <div class="container">
       <div class="skills-grid fade-in delay-1">
-        <div class="skill-cat-card">
+
+        <div class="skill-cat-card expandable-card">
           <div class="skill-cat-icon"><i class="fas fa-project-diagram"></i></div>
           <h4>Agentic AI &amp; Orchestration</h4>
-          <div class="skill-tags">
+          <div class="skill-tags skill-tags-preview">
             <span>LangGraph</span><span>LangChain</span><span>Supervisor/Worker</span>
+          </div>
+          <div class="skill-tags skill-tags-extra">
             <span>Critic Loops</span><span>Tool Invocation</span><span>Router Patterns</span>
           </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Show All <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
-        <div class="skill-cat-card">
+
+        <div class="skill-cat-card expandable-card">
           <div class="skill-cat-icon"><i class="fas fa-search"></i></div>
           <h4>RAG &amp; Knowledge Layer</h4>
-          <div class="skill-tags">
+          <div class="skill-tags skill-tags-preview">
             <span>FAISS</span><span>Chroma</span><span>Vector Search</span>
+          </div>
+          <div class="skill-tags skill-tags-extra">
             <span>Chunking/Overlap</span><span>Metadata Retrieval</span><span>Evidence Shaping</span>
           </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Show All <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
-        <div class="skill-cat-card">
+
+        <div class="skill-cat-card expandable-card">
           <div class="skill-cat-icon"><i class="fas fa-gavel"></i></div>
           <h4>LLM Evaluation &amp; QC</h4>
-          <div class="skill-tags">
+          <div class="skill-tags skill-tags-preview">
             <span>LLM-as-Judge</span><span>Structural QC</span><span>Logic QC</span>
+          </div>
+          <div class="skill-tags skill-tags-extra">
             <span>Eval Matrix</span><span>Confidence Scoring</span><span>HITL Feedback</span>
           </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Show All <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
-        <div class="skill-cat-card">
+
+        <div class="skill-cat-card expandable-card">
           <div class="skill-cat-icon"><i class="fas fa-file-code"></i></div>
           <h4>Spec &amp; Code Automation</h4>
-          <div class="skill-tags">
+          <div class="skill-tags skill-tags-preview">
             <span>Protocol &rarr; Spec</span><span>Spec &rarr; Code</span><span>R Programming</span>
+          </div>
+          <div class="skill-tags skill-tags-extra">
             <span>Debugger Agents</span><span>QC Reports</span><span>SDTM / ADaM</span>
           </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Show All <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
-        <div class="skill-cat-card">
+
+        <div class="skill-cat-card expandable-card">
           <div class="skill-cat-icon"><i class="fas fa-layer-group"></i></div>
           <h4>Data Engineering (Foundation)</h4>
-          <div class="skill-tags">
+          <div class="skill-tags skill-tags-preview">
             <span>PySpark</span><span>Databricks</span><span>Kafka</span>
+          </div>
+          <div class="skill-tags skill-tags-extra">
             <span>Snowflake</span><span>AWS</span><span>Azure</span>
           </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Show All <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
-        <div class="skill-cat-card">
+
+        <div class="skill-cat-card expandable-card">
           <div class="skill-cat-icon"><i class="fas fa-server"></i></div>
           <h4>Platform &amp; DevOps</h4>
-          <div class="skill-tags">
+          <div class="skill-tags skill-tags-preview">
             <span>Lakehouse Arch.</span><span>API Gateway</span><span>CI/CD</span>
+          </div>
+          <div class="skill-tags skill-tags-extra">
             <span>Audit Logging</span><span>Secrets Mgmt.</span><span>Git SDLC</span>
           </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Show All <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
+
       </div>
     </div>
   </section>
 
-    <!-- CASE STUDIES -->
+  <!-- CASE STUDIES -->
   <section id="case-studies" class="section section-alt">
     <div class="container">
       <div class="section-header fade-in">
@@ -466,8 +512,9 @@
         <p class="section-subtitle">Real-world agentic systems built for regulated, enterprise-grade workflows. Client names intentionally withheld.</p>
       </div>
 
-      <!-- Case Study A &mdash; Featured -->
-      <div class="case-card case-card-featured fade-in">
+      <!-- Case Study A — Featured -->
+      <div class="case-card case-card-featured expandable-card tilt-card fade-in">
+        <!-- Summary tile (always visible) -->
         <div class="case-top">
           <div class="case-icon-wrap">
             <i class="fas fa-dna"></i>
@@ -479,53 +526,65 @@
           </div>
           <div class="case-status status-active">Production</div>
         </div>
-          <p class="case-summary">
-            End-to-end agentic pipeline automating SDTM &rarr; ADaM dataset generation and QC reporting
-            at enterprise scale. Replaced a largely manual, multi-day process with a fully orchestrated
-            AI pipeline featuring measurable quality gates across 16 ADaM domains and ~10 studies.
-          </p>
-
-        <div class="case-section-label"><i class="fas fa-sitemap"></i> Agent Pipeline</div>
-        <div class="case-pipeline">
-          <div class="pipeline-step">Spec Generation</div>
-          <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
-          <div class="pipeline-step">Code Generation</div>
-          <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
-          <div class="pipeline-step">RAG Grounding</div>
-          <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
-          <div class="pipeline-step">LLM-as-Judge QC</div>
-          <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
-          <div class="pipeline-step">Debugger / QC</div>
-          <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
-          <div class="pipeline-step">Final Report</div>
+        <p class="case-summary">
+          End-to-end agentic pipeline automating SDTM &rarr; ADaM dataset generation and QC reporting
+          at enterprise scale.
+        </p>
+        <!-- Stat badges — always visible -->
+        <div class="case-stat-badges">
+          <span class="stat-badge"><i class="fas fa-table"></i> 16 ADaM Domains</span>
+          <span class="stat-badge"><i class="fas fa-flask"></i> ~10 Studies</span>
+          <span class="stat-badge"><i class="fas fa-arrow-up"></i> ~75% Efficiency Gain</span>
         </div>
 
-        <div class="case-section-label"><i class="fas fa-chart-bar"></i> Results</div>
-        <div class="case-results">
-          <div class="result-chip"><i class="fas fa-table"></i> 16 ADaM Domains</div>
-          <div class="result-chip"><i class="fas fa-flask"></i> ~10 Studies</div>
-          <div class="result-chip"><i class="fas fa-clock"></i> 45&ndash;60 min Runtime</div>
-          <div class="result-chip"><i class="fas fa-arrow-up"></i> ~75% Efficiency Gain vs Manual</div>
-        </div>
-
-        <div class="case-footer">
-          <div class="case-deliverables">
-            <span class="deliv-label">Deliverables:</span>
-            <span>HLD/LLD + Architecture Diagrams</span>
-            <span>Repo Structure + Guardrails</span>
-            <span>Stakeholder Walkthroughs</span>
+        <!-- Expandable details -->
+        <div class="card-expand-body">
+          <div class="case-section-label"><i class="fas fa-sitemap"></i> Agent Pipeline</div>
+          <div class="case-pipeline">
+            <div class="pipeline-step">Spec Generation</div>
+            <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+            <div class="pipeline-step">Code Generation</div>
+            <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+            <div class="pipeline-step">RAG Grounding</div>
+            <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+            <div class="pipeline-step">LLM-as-Judge QC</div>
+            <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+            <div class="pipeline-step">Debugger / QC</div>
+            <span class="pipeline-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+            <div class="pipeline-step">Final Report</div>
           </div>
-          <div class="job-tags case-tags">
-            <span>Lakehouse</span><span>Vector RAG</span><span>Git SDLC</span>
-            <span>API Gateway</span><span>Claude</span><span>OpenAI</span>
+
+          <div class="case-section-label"><i class="fas fa-chart-bar"></i> Results</div>
+          <div class="case-results">
+            <div class="result-chip"><i class="fas fa-table"></i> 16 ADaM Domains</div>
+            <div class="result-chip"><i class="fas fa-flask"></i> ~10 Studies</div>
+            <div class="result-chip"><i class="fas fa-clock"></i> 45&ndash;60 min Runtime</div>
+            <div class="result-chip"><i class="fas fa-arrow-up"></i> ~75% Efficiency Gain vs Manual</div>
+          </div>
+
+          <div class="case-footer">
+            <div class="case-deliverables">
+              <span class="deliv-label">Deliverables:</span>
+              <span>HLD/LLD + Architecture Diagrams</span>
+              <span>Repo Structure + Guardrails</span>
+              <span>Stakeholder Walkthroughs</span>
+            </div>
+            <div class="job-tags case-tags">
+              <span>Lakehouse</span><span>Vector RAG</span><span>Git SDLC</span>
+              <span>API Gateway</span><span>Claude</span><span>OpenAI</span>
+            </div>
           </div>
         </div>
+
+        <button class="expand-toggle expand-toggle-case" aria-expanded="false">
+          View Details <i class="fas fa-chevron-down expand-chevron"></i>
+        </button>
       </div>
 
-        <!-- CASE STUDIES -->
+      <!-- Case Studies B + C -->
       <div class="case-cards-row">
 
-        <div class="case-card fade-in delay-1">
+        <div class="case-card expandable-card tilt-card fade-in delay-1">
           <div class="case-top">
             <div class="case-icon-wrap small">
               <i class="fas fa-exchange-alt"></i>
@@ -537,23 +596,32 @@
             </div>
           </div>
           <p class="case-summary">
-            Designed and engineered automation for Raw &rarr; SDTM transformations in a Databricks
-            lakehouse pipeline. Led pipeline design, toolchain integration, and an LLM-powered code
-            review utility for readability, standards compliance, and defect detection.
+            Architecture and engineering for automating Raw &rarr; SDTM transformations in a Databricks lakehouse pipeline.
           </p>
-          <div class="case-contributions">
-            <div class="contrib-item"><i class="fas fa-check-circle"></i> Pipeline design + orchestration</div>
-            <div class="contrib-item"><i class="fas fa-check-circle"></i> Toolchain integration</div>
-            <div class="contrib-item"><i class="fas fa-check-circle"></i> LLM-powered code review utility</div>
-            <div class="contrib-item"><i class="fas fa-check-circle"></i> Repo conventions + maintainability guardrails</div>
+          <div class="case-stat-badges">
+            <span class="stat-badge"><i class="fas fa-cogs"></i> Pipeline Design</span>
+            <span class="stat-badge"><i class="fas fa-code"></i> LLM Code Review</span>
           </div>
-          <div class="job-tags case-tags">
-            <span>Databricks</span><span>LangChain</span><span>LLM Code Review</span>
-            <span>PySpark</span><span>SDTM</span>
+
+          <div class="card-expand-body">
+            <div class="case-contributions">
+              <div class="contrib-item"><i class="fas fa-check-circle"></i> Pipeline design + orchestration</div>
+              <div class="contrib-item"><i class="fas fa-check-circle"></i> Toolchain integration</div>
+              <div class="contrib-item"><i class="fas fa-check-circle"></i> LLM-powered code review utility</div>
+              <div class="contrib-item"><i class="fas fa-check-circle"></i> Repo conventions + maintainability guardrails</div>
+            </div>
+            <div class="job-tags case-tags">
+              <span>Databricks</span><span>LangChain</span><span>LLM Code Review</span>
+              <span>PySpark</span><span>SDTM</span>
+            </div>
           </div>
+
+          <button class="expand-toggle expand-toggle-case" aria-expanded="false">
+            View Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
-        <div class="case-card fade-in delay-2">
+        <div class="case-card expandable-card tilt-card fade-in delay-2">
           <div class="case-top">
             <div class="case-icon-wrap small">
               <i class="fas fa-file-medical-alt"></i>
@@ -565,27 +633,36 @@
             </div>
           </div>
           <p class="case-summary">
-            Automates the full analyst workflow from Protocol PDF (30&ndash;40 pages) through programming
-            specification, R code generation, and QC validation. The RAG knowledge layer is grounded in
-            ~15 historical protocol/spec pairs, with evaluation scoring against gold references.
+            Automates the full analyst workflow from Protocol PDF (30&ndash;40 pages) through spec, R code, and QC validation.
           </p>
-          <div class="case-components">
-            <div class="comp-item"><span class="comp-dot"></span> Authoring Agent (Protocol &rarr; Spec + Critic/Review loop)</div>
-            <div class="comp-item"><span class="comp-dot"></span> QC Agent (Structural + Logic QC, analyst-reviewable reports)</div>
-            <div class="comp-item"><span class="comp-dot"></span> RAG Knowledge Layer (~15 historical protocol/spec pairs)</div>
-            <div class="comp-item"><span class="comp-dot"></span> Evaluation Matrix Engine (metric trend tracking)</div>
+          <div class="case-stat-badges">
+            <span class="stat-badge"><i class="fas fa-file-alt"></i> 15 RAG Pairs</span>
+            <span class="stat-badge"><i class="fas fa-chart-line"></i> Eval Matrix</span>
           </div>
-          <div class="job-tags case-tags">
-            <span>LangGraph</span><span>Streamlit</span><span>Vector RAG</span>
-            <span>R</span><span>Eval Matrix</span><span>SQL Audit</span>
+
+          <div class="card-expand-body">
+            <div class="case-components">
+              <div class="comp-item"><span class="comp-dot"></span> Authoring Agent (Protocol &rarr; Spec + Critic/Review loop)</div>
+              <div class="comp-item"><span class="comp-dot"></span> QC Agent (Structural + Logic QC, analyst-reviewable reports)</div>
+              <div class="comp-item"><span class="comp-dot"></span> RAG Knowledge Layer (~15 historical protocol/spec pairs)</div>
+              <div class="comp-item"><span class="comp-dot"></span> Evaluation Matrix Engine (metric trend tracking)</div>
+            </div>
+            <div class="job-tags case-tags">
+              <span>LangGraph</span><span>Streamlit</span><span>Vector RAG</span>
+              <span>R</span><span>Eval Matrix</span><span>SQL Audit</span>
+            </div>
           </div>
+
+          <button class="expand-toggle expand-toggle-case" aria-expanded="false">
+            View Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
       </div>
     </div>
   </section>
 
-    <!-- PROJECTS AND DEMOS -->
+  <!-- PROJECTS AND DEMOS -->
   <section id="projects" class="section">
     <div class="container">
       <div class="section-header fade-in">
@@ -599,40 +676,67 @@
       </div>
       <div class="projects-grid fade-in">
 
-        <div class="project-card project-ai">
+        <div class="project-card project-ai expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon ai-icon"><i class="fas fa-stethoscope"></i></div>
             <div class="project-date">Personal</div>
           </div>
           <h3>Dr. Assistant &mdash; RAG Copilot</h3>
-          <p>Local-first RAG chatbot: PDFs &rarr; chunk/embed &rarr; FAISS &rarr; LLM answers with sources &amp; latency display. <strong>Gradio dark-theme UI</strong> with sources table (file / page / chunk / preview) and loaded-PDFs panel.</p>
-          <div class="project-tags">
-            <span>FAISS</span><span>sentence-transformers</span><span>Groq LLM</span><span>Gradio</span>
+          <p class="project-summary-text">Local-first RAG chatbot with Gradio dark-theme UI, sources table, and latency display.</p>
+          <div class="project-tags project-tags-preview">
+            <span>FAISS</span><span>Groq LLM</span><span>Gradio</span>
           </div>
+          <div class="card-expand-body">
+            <p>PDFs &rarr; chunk/embed &rarr; FAISS &rarr; LLM answers with sources &amp; latency display. <strong>Gradio dark-theme UI</strong> with sources table (file / page / chunk / preview) and loaded-PDFs panel.</p>
+            <div class="project-tags">
+              <span>FAISS</span><span>sentence-transformers</span><span>Groq LLM</span><span>Gradio</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
-        <div class="project-card project-ai">
+        <div class="project-card project-ai expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon ai-icon"><i class="fas fa-lock"></i></div>
             <div class="project-date">Personal</div>
           </div>
           <h3>Local RAG App &mdash; Ollama + Chroma</h3>
-          <p>Privacy-first local RAG pipeline: <strong>Ollama LLM + embeddings</strong>, persistent Chroma vector DB, and a clean Streamlit UI. No data leaves the machine &mdash; built for secure, offline document Q&amp;A.</p>
-          <div class="project-tags">
-            <span>Ollama</span><span>Chroma</span><span>Streamlit</span><span>Local LLM</span>
+          <p class="project-summary-text">Privacy-first local RAG pipeline — no data leaves the machine.</p>
+          <div class="project-tags project-tags-preview">
+            <span>Ollama</span><span>Chroma</span><span>Streamlit</span>
           </div>
+          <div class="card-expand-body">
+            <p>Privacy-first local RAG pipeline: <strong>Ollama LLM + embeddings</strong>, persistent Chroma vector DB, and a clean Streamlit UI. No data leaves the machine &mdash; built for secure, offline document Q&amp;A.</p>
+            <div class="project-tags">
+              <span>Ollama</span><span>Chroma</span><span>Streamlit</span><span>Local LLM</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
-        <div class="project-card project-ai">
+        <div class="project-card project-ai expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon ai-icon"><i class="fas fa-industry"></i></div>
             <div class="project-date">Architecture Design</div>
           </div>
           <h3>Manufacturing RAG &mdash; Knowledge + Actions + Audit</h3>
-          <p>Sellable architecture for the manufacturing domain: <strong>RAG knowledge layer + workflow agents</strong> with safety controls, RBAC + action allowlists, doc revision prioritization, evidence thresholds, and full audit logs.</p>
-          <div class="project-tags">
-            <span>RAG</span><span>Agents</span><span>RBAC</span><span>Audit Logs</span>
+          <p class="project-summary-text">Sellable architecture for manufacturing: RAG + workflow agents with safety controls.</p>
+          <div class="project-tags project-tags-preview">
+            <span>RAG</span><span>Agents</span><span>RBAC</span>
           </div>
+          <div class="card-expand-body">
+            <p>Sellable architecture for the manufacturing domain: <strong>RAG knowledge layer + workflow agents</strong> with safety controls, RBAC + action allowlists, doc revision prioritization, evidence thresholds, and full audit logs.</p>
+            <div class="project-tags">
+              <span>RAG</span><span>Agents</span><span>RBAC</span><span>Audit Logs</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
       </div>
@@ -643,28 +747,46 @@
       </div>
       <div class="projects-grid projects-grid-2 fade-in">
 
-        <div class="project-card project-eval">
+        <div class="project-card project-eval expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon eval-icon"><i class="fas fa-satellite-dish"></i></div>
             <div class="project-date">Enterprise Evaluation</div>
           </div>
           <h3>Enterprise Agent Runtime Evaluation</h3>
-          <p>Assessed runtime behavior, observability maturity, memory handling, and gateway/API integration across enterprise agent platforms. Built working agents to validate flows &amp; limitations; produced a leadership-level POV artifact.</p>
-          <div class="project-tags">
-            <span>Agent Runtimes</span><span>Observability</span><span>Memory</span><span>Gateway</span>
+          <p class="project-summary-text">Assessed runtime behavior, observability maturity, and gateway integration across enterprise agent platforms.</p>
+          <div class="project-tags project-tags-preview">
+            <span>Agent Runtimes</span><span>Observability</span>
           </div>
+          <div class="card-expand-body">
+            <p>Assessed runtime behavior, observability maturity, memory handling, and gateway/API integration across enterprise agent platforms. Built working agents to validate flows &amp; limitations; produced a leadership-level POV artifact.</p>
+            <div class="project-tags">
+              <span>Agent Runtimes</span><span>Observability</span><span>Memory</span><span>Gateway</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
-        <div class="project-card project-eval">
+        <div class="project-card project-eval expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon eval-icon"><i class="fas fa-plug"></i></div>
             <div class="project-date">Proof of Concept</div>
           </div>
           <h3>MCP (Model Context Protocol) POC</h3>
-          <p>Built MCP client/server prototype for tool-access patterns. Integrated agent with MCP for tool execution; validated tool-grounded responses and documented integration patterns for enterprise adoption.</p>
-          <div class="project-tags">
-            <span>MCP</span><span>Tool Use</span><span>Agent</span><span>Claude</span>
+          <p class="project-summary-text">Built MCP client/server prototype for tool-access patterns with Claude integration.</p>
+          <div class="project-tags project-tags-preview">
+            <span>MCP</span><span>Tool Use</span><span>Claude</span>
           </div>
+          <div class="card-expand-body">
+            <p>Built MCP client/server prototype for tool-access patterns. Integrated agent with MCP for tool execution; validated tool-grounded responses and documented integration patterns for enterprise adoption.</p>
+            <div class="project-tags">
+              <span>MCP</span><span>Tool Use</span><span>Agent</span><span>Claude</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
       </div>
@@ -675,47 +797,74 @@
       </div>
       <div class="projects-grid fade-in">
 
-        <div class="project-card">
+        <div class="project-card expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon"><i class="fas fa-cloud"></i></div>
             <div class="project-date">2020</div>
           </div>
           <h3>Customer Engagement Framework</h3>
-          <p>Cloud-native PySpark pipeline for batch &amp; streaming processing deployed on Cloudera, AWS &amp; Azure for an enterprise healthcare customer engagement platform.</p>
-          <div class="project-tags">
-            <span>PySpark</span><span>AWS</span><span>Azure</span><span>Cloudera</span><span>Streaming</span>
+          <p class="project-summary-text">Cloud-native PySpark pipeline for batch &amp; streaming processing on AWS, Azure, and Cloudera.</p>
+          <div class="project-tags project-tags-preview">
+            <span>PySpark</span><span>AWS</span><span>Streaming</span>
           </div>
+          <div class="card-expand-body">
+            <p>Cloud-native PySpark pipeline for batch &amp; streaming processing deployed on Cloudera, AWS &amp; Azure for an enterprise healthcare customer engagement platform.</p>
+            <div class="project-tags">
+              <span>PySpark</span><span>AWS</span><span>Azure</span><span>Cloudera</span><span>Streaming</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
-        <div class="project-card">
+        <div class="project-card expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon"><i class="fas fa-chart-line"></i></div>
             <div class="project-date">2019</div>
           </div>
           <h3>German Risk Credit Analysis</h3>
-          <p>ML model achieving <strong>89% accuracy</strong> using XGBoost, Random Forest &amp; Logistic Regression to predict credit risk from the German Credit dataset.</p>
-          <div class="project-tags">
-            <span>XGBoost</span><span>Random Forest</span><span>Python</span><span>Scikit-learn</span>
+          <p class="project-summary-text">ML model achieving <strong>89% accuracy</strong> using XGBoost, Random Forest &amp; Logistic Regression.</p>
+          <div class="project-tags project-tags-preview">
+            <span>XGBoost</span><span>Python</span>
           </div>
+          <div class="card-expand-body">
+            <p>ML model achieving <strong>89% accuracy</strong> using XGBoost, Random Forest &amp; Logistic Regression to predict credit risk from the German Credit dataset.</p>
+            <div class="project-tags">
+              <span>XGBoost</span><span>Random Forest</span><span>Python</span><span>Scikit-learn</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
-        <div class="project-card">
+        <div class="project-card expandable-card tilt-card">
           <div class="project-header">
             <div class="project-icon"><i class="fas fa-user-slash"></i></div>
             <div class="project-date">2018</div>
           </div>
           <h3>Loan Defaulter Prediction</h3>
-          <p>Processed <strong>8 lakh observations</strong> to build an ML pipeline predicting loan defaults with <strong>99% accuracy</strong>, enabling better credit risk decisions.</p>
-          <div class="project-tags">
-            <span>Python</span><span>ML</span><span>Pandas</span><span>Feature Engineering</span>
+          <p class="project-summary-text">Processed <strong>8 lakh observations</strong> with <strong>99% accuracy</strong> ML pipeline for credit risk decisions.</p>
+          <div class="project-tags project-tags-preview">
+            <span>Python</span><span>ML</span>
           </div>
+          <div class="card-expand-body">
+            <p>Processed <strong>8 lakh observations</strong> to build an ML pipeline predicting loan defaults with <strong>99% accuracy</strong>, enabling better credit risk decisions.</p>
+            <div class="project-tags">
+              <span>Python</span><span>ML</span><span>Pandas</span><span>Feature Engineering</span>
+            </div>
+          </div>
+          <button class="expand-toggle" aria-expanded="false">
+            Details <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
         </div>
 
       </div>
     </div>
   </section>
 
-    <!-- GITHUB / OPEN SOURCE -->
+  <!-- GITHUB / OPEN SOURCE -->
   <section id="github" class="section section-alt">
     <div class="container">
       <div class="section-header fade-in">
@@ -754,7 +903,6 @@
       <!-- Repo cards grid -->
       <div class="github-grid fade-in delay-1">
 
-        <!-- AI_101_Clinical_Data_POC -->
         <a href="https://github.com/RishieRich/AI_101_Clinical_Data_POC" target="_blank" rel="noopener" class="github-repo-card">
           <div class="github-repo-header">
             <div class="github-repo-icon gh-icon-ai"><i class="fas fa-brain"></i></div>
@@ -771,7 +919,6 @@
           </div>
         </a>
 
-        <!-- ARQ_Lang-Chain-Smith-Graph -->
         <a href="https://github.com/RishieRich/ARQ_Lang-Chain-Smith-Graph" target="_blank" rel="noopener" class="github-repo-card">
           <div class="github-repo-header">
             <div class="github-repo-icon gh-icon-graph"><i class="fas fa-project-diagram"></i></div>
@@ -788,7 +935,6 @@
           </div>
         </a>
 
-        <!-- ARQ_OpenClaw_ClawdBot_Experiment -->
         <a href="https://github.com/RishieRich/ARQ_OpenClaw_ClawdBot_Experiment" target="_blank" rel="noopener" class="github-repo-card">
           <div class="github-repo-header">
             <div class="github-repo-icon gh-icon-chat"><i class="fas fa-comments"></i></div>
@@ -805,7 +951,6 @@
           </div>
         </a>
 
-        <!-- ARQ_Claude_Code_Test -->
         <a href="https://github.com/RishieRich/ARQ_Claude_Code_Test" target="_blank" rel="noopener" class="github-repo-card">
           <div class="github-repo-header">
             <div class="github-repo-icon gh-icon-bot"><i class="fas fa-robot"></i></div>
@@ -822,7 +967,6 @@
           </div>
         </a>
 
-        <!-- ARQ_Code_Validator -->
         <a href="https://github.com/RishieRich/ARQ_Code_Validator" target="_blank" rel="noopener" class="github-repo-card">
           <div class="github-repo-header">
             <div class="github-repo-icon gh-icon-check"><i class="fas fa-shield-alt"></i></div>
@@ -839,7 +983,6 @@
           </div>
         </a>
 
-        <!-- ARQ_EatEasy_v1.0 -->
         <a href="https://github.com/RishieRich/ARQ_EatEasy_v1.0" target="_blank" rel="noopener" class="github-repo-card">
           <div class="github-repo-header">
             <div class="github-repo-icon gh-icon-app"><i class="fas fa-utensils"></i></div>
@@ -860,7 +1003,7 @@
     </div>
   </section>
 
-    <!-- CERTIFICATIONS -->
+  <!-- CERTIFICATIONS -->
   <section id="certifications" class="section section-alt">
     <div class="container">
       <div class="section-header fade-in">
@@ -868,7 +1011,7 @@
         <h2 class="section-title">Credentials</h2>
       </div>
 
-      <!-- Featured row &mdash; AWS pair -->
+      <!-- Featured row — AWS pair -->
       <div class="certs-featured-row fade-in">
         <div class="cert-card featured">
           <div class="cert-badge"><i class="fab fa-aws"></i></div>
@@ -890,7 +1033,7 @@
         </div>
       </div>
 
-      <!-- Standard grid &mdash; remaining 6 -->
+      <!-- Standard grid — remaining 6 -->
       <div class="certs-grid certs-standard fade-in delay-1">
 
         <div class="cert-card">
@@ -951,7 +1094,7 @@
     </div>
   </section>
 
-    <!-- WRITING AND ENABLEMENT -->
+  <!-- WRITING AND ENABLEMENT -->
   <section id="writing" class="section">
     <div class="container">
       <div class="section-header fade-in">
@@ -960,53 +1103,71 @@
       </div>
       <div class="articles-grid">
 
-        <a href="https://www.linkedin.com/in/rishikesh-pote-82162b126/" target="_blank" rel="noopener" class="article-card fade-in">
+        <div class="article-card expandable-card fade-in">
           <div class="article-icon"><i class="fas fa-snowflake"></i></div>
           <div class="article-meta">
             <span class="article-date">May 1, 2025</span>
             <span class="article-platform"><i class="fab fa-linkedin"></i> LinkedIn</span>
           </div>
           <h3>The 2025 ELT Showdown: Snowflake vs. Databricks Unveiled</h3>
-          <p>An in-depth comparative analysis of two industry-leading cloud data platforms &mdash; Snowflake and Databricks &mdash; covering architecture, performance, and cost trade-offs.</p>
+          <p class="article-summary-text">In-depth comparative analysis of Snowflake and Databricks — architecture, performance, and cost trade-offs.</p>
+          <div class="card-expand-body">
+            <p>An in-depth comparative analysis of two industry-leading cloud data platforms &mdash; Snowflake and Databricks &mdash; covering architecture, performance, and cost trade-offs.</p>
+          </div>
           <div class="article-footer">
             <span><i class="fas fa-thumbs-up"></i> 3 Likes</span>
-            <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            <a href="https://www.linkedin.com/in/rishikesh-pote-82162b126/" target="_blank" rel="noopener" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
           </div>
-        </a>
+          <button class="expand-toggle" aria-expanded="false">
+            More <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
+        </div>
 
-        <a href="https://www.linkedin.com/in/rishikesh-pote-82162b126/" target="_blank" rel="noopener" class="article-card fade-in delay-1">
+        <div class="article-card expandable-card fade-in delay-1">
           <div class="article-icon"><i class="fas fa-robot"></i></div>
           <div class="article-meta">
             <span class="article-date">Mar 11, 2025</span>
             <span class="article-platform"><i class="fab fa-linkedin"></i> LinkedIn</span>
           </div>
           <h3>Revolutionizing AI: Beyond Models &amp; Algorithms</h3>
-          <p>Exploring how modern AI is transcending its algorithmic roots to become a transformational force in enterprise systems and decision-making frameworks.</p>
+          <p class="article-summary-text">How modern AI is transcending algorithmic roots to become a transformational force in enterprise systems.</p>
+          <div class="card-expand-body">
+            <p>Exploring how modern AI is transcending its algorithmic roots to become a transformational force in enterprise systems and decision-making frameworks.</p>
+          </div>
           <div class="article-footer">
             <span><i class="fas fa-thumbs-up"></i> 3 Likes</span>
-            <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            <a href="https://www.linkedin.com/in/rishikesh-pote-82162b126/" target="_blank" rel="noopener" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
           </div>
-        </a>
+          <button class="expand-toggle" aria-expanded="false">
+            More <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
+        </div>
 
-        <a href="https://www.linkedin.com/in/rishikesh-pote-82162b126/" target="_blank" rel="noopener" class="article-card fade-in delay-2">
+        <div class="article-card expandable-card fade-in delay-2">
           <div class="article-icon"><i class="fas fa-hamburger"></i></div>
           <div class="article-meta">
             <span class="article-date">Mar 11, 2025</span>
             <span class="article-platform"><i class="fab fa-linkedin"></i> LinkedIn</span>
           </div>
           <h3>McDonald's Embraces AI: Revolutionizing Fast-Food Service</h3>
-          <p>A real-world case study on how McDonald's is leveraging AI to optimize operations, personalize customer experiences, and redefine fast-food service at scale.</p>
+          <p class="article-summary-text">How McDonald's leverages AI to optimize operations, personalize experiences, and redefine fast-food service.</p>
+          <div class="card-expand-body">
+            <p>A real-world case study on how McDonald's is leveraging AI to optimize operations, personalize customer experiences, and redefine fast-food service at scale.</p>
+          </div>
           <div class="article-footer">
             <span><i class="fas fa-thumbs-up"></i> 7 Likes</span>
-            <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            <a href="https://www.linkedin.com/in/rishikesh-pote-82162b126/" target="_blank" rel="noopener" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
           </div>
-        </a>
+          <button class="expand-toggle" aria-expanded="false">
+            More <i class="fas fa-chevron-down expand-chevron"></i>
+          </button>
+        </div>
 
       </div>
     </div>
   </section>
 
-    <!-- CONTACT -->
+  <!-- CONTACT -->
   <section id="contact" class="section section-alt">
     <div class="container">
       <div class="section-header fade-in">
@@ -1058,7 +1219,7 @@
     </div>
   </section>
 
-    <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">RP<span class="accent-dot">.</span></div>
